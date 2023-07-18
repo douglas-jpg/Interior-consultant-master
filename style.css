@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Lora:wght@400;500;700&family=Montserrat:wght@400;500;700&display=swap');
+
+:root{
+    --black: #252525;
+    --gray: #828282;
+    --white: #fafafa;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body{
+    height: 100vh;
+    color: var(--white);
+    background-color: var(--black);
+    font-family: 'Montserrat', sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw 0;
+}
+
+#title-nav{
+    padding: 10px;
+    min-width: 85.5px;
+    border: solid 1px var(--white);
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+nav{
+    display: flex;
+    gap: 6vw;
+    list-style: none;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+li:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+main{
+    display: flex;
+    padding: 0 5vw 0;
+    gap: 3vw;
+    height: 100vh;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+h1{
+    font-family: 'Lora', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 500;
+}
+
+#text{
+    width: 410px;
+    padding: 30px 0;
+    max-width: 100%;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+button{
+    transition: 0.5s;
+    display: flex;
+    width: 170px;
+    max-width: 100%;
+    padding: 15px;
+    gap: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--black);
+    color: var(--white);
+    font-size: 1.125rem;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+
+
+figure{
+    display: flex;
+    margin: 25px 0;
+}
+
+figcaption{
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+#card{
+    
+    position: absolute;
+    margin-top: 60vh;
+    margin-left: 15vw;
+    display: flex;
+    flex-direction: column;
+    max-width: 40%;
+    max-height: 500%;
+    background-color: var(--black);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+#profile{
+    width: 50px;
+    height: 50px;
+    border-radius: 37px;
+    margin: 0 20px;
+}
+
+#name{
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+#function{
+    color: var(--gray);
+    font-size: 0.75rem;
+}
+
+#description{
+    margin: 0 30px;
+    padding-bottom: 30px;
+    font-family: 'Lora', serif;
+    font-size: 150%;
+    font-weight: 700;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
