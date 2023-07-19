@@ -14,30 +14,30 @@
 
 body{
     height: 100vh;
-    color: var(--white);
-    background-color: var(--black);
+    background: var(--black);
     font-family: 'Montserrat', sans-serif;
+    color: var(--white);
 }
 
 header{
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 0 5vw 0;
 }
 
 #title-nav{
-    padding: 10px;
     min-width: 85.5px;
+    padding: 10px;
     border: solid 1px var(--white);
     font-family: 'Crimson Pro', serif;
     font-size: 0.875rem;
     text-transform: uppercase;
 }
 
-nav{
+ul{
     display: flex;
-    gap: 6vw;
+    gap: 25px;
     list-style: none;
     font-size: 1.125rem;
     font-weight: 500;
@@ -45,15 +45,19 @@ nav{
 
 li:hover{
     cursor: pointer;
-    text-decoration: underline;
     font-weight: 700;
+    text-decoration: underline;
+}
+
+#menu{
+    display: none;
 }
 
 main{
     display: flex;
-    padding: 0 5vw 0;
     gap: 3vw;
     height: 100vh;
+    padding: 0 5vw 0;
 }
 
 section{
@@ -70,30 +74,31 @@ h1{
 }
 
 #text{
-    width: 410px;
-    padding: 30px 0;
+    width: max-content;
     max-width: 100%;
+    padding: 30px 0;
     font-size: 1.5rem;
     font-weight: 400;
 }
 
-button{
-    transition: 0.5s;
+#btn{
     display: flex;
+    gap: 15px;
+    align-items: center;
     width: 170px;
     max-width: 100%;
     padding: 15px;
-    gap: 15px;
     border: none;
     border-radius: 5px;
-    background-color: var(--black);
-    color: var(--white);
     font-size: 1.125rem;
+    transition: 0.5s;
+    background: var(--black);
+    color: var(--white);
 }
 
-button:hover{
+#btn:hover{
     cursor: pointer;
-    background-color: var(--white);
+    background: var(--white);
     color: var(--black);
 }
 
@@ -105,8 +110,6 @@ button:hover{
     'opsz' 48
 }
 
-
-
 figure{
     display: flex;
     margin: 25px 0;
@@ -115,44 +118,39 @@ figure{
 figcaption{
     display: flex;
     flex-direction: column;
-    font-weight: 500;
+    height: 30%;
+    width: 40%;
+    color: var(--gray);
+    font-size: clamp(0.7rem, 1vw, 2rem);
 }
 
 #card{
-    
+    height: 30%;
+    width: 25%;
     position: absolute;
-    margin-top: 60vh;
-    margin-left: 15vw;
-    display: flex;
-    flex-direction: column;
-    max-width: 40%;
-    max-height: 500%;
-    background-color: var(--black);
+    margin: 0 0 -35% 17%;
+    background: var(--black);
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 #profile{
-    width: 50px;
-    height: 50px;
-    border-radius: 37px;
+    height: 15%;
+    width: 15%;
     margin: 0 20px;
+    border-radius: 50%;
 }
 
 #name{
-    font-size: 0.875rem;
+    color: var(--white);
     font-weight: 500;
 }
 
-#function{
-    color: var(--gray);
-    font-size: 0.75rem;
-}
-
 #description{
-    margin: 0 30px;
+    height: 20%;
     padding-bottom: 30px;
+    margin: 0 30px;
     font-family: 'Lora', serif;
-    font-size: 150%;
+    font-size: clamp(0.8rem, 2vw, 1.5rem);
     font-weight: 700;
 }
 
@@ -160,7 +158,118 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: auto;
+    padding: 10px 0 10px;
     font-size: 0.875rem;
     font-weight: 600;
+}
+
+@media (max-width: 550px) {
+
+    ul{
+        position: absolute;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top: 40px;
+        left: 0px;
+        height: 0;
+        width: calc(100% - 70px);
+        padding: 30px;
+        background: var(--black);
+        transition: 0.5s;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+
+    #menu{
+        cursor: pointer;
+        display: flex;
+        padding: .5rem 1rem;
+        border: none;
+        background: none;
+        font-size: 1rem;
+    }
+
+    #hamburguer{
+        display: block;
+        width: 20px;
+        border-top: 2px solid var(--white);
+    }
+
+    #hamburguer::after, #hamburguer::before{
+        position: relative;
+        content: '';
+        display: block;
+        height: 2px;
+        width: 20px;
+        margin-top: 5px;
+        background: var(--white);
+        transition: 0.5s;
+    }
+
+    #nav.active #hamburguer{
+        border-top-color: transparent;
+    }
+
+    #nav.active #hamburguer::after{
+        transform: rotate(135deg);
+        top: -7px;
+    }  
+
+    #nav.active #hamburguer::before{
+        transform: rotate(-135deg);
+    }  
+
+    #nav.active ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 120vh;
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    li{
+        padding: 10px;
+    }
+
+    h1{
+        width: max-content;
+        font-size: 2rem;
+    }
+
+    main{
+        flex-direction: column;
+        height: 110%;
+    }
+
+    #text, button{
+        max-width: 175px;
+        font-size: 0.875rem;
+    }
+
+    #design{
+        height: 110%;
+        width: 150%;
+        min-width: 260px;
+    }
+
+    #card{
+        height: 25vh;
+        width: 60vw;
+        min-width: 200px;
+        margin-top: clamp(0%, 20vh, 90%);
+        margin-left: clamp(0%, 10vh, 30%);
+    }
+
+    #description{
+        margin: -20px 30px;
+    }
+    
+    footer{
+        font-size: 0.8rem;
+    }
 }
